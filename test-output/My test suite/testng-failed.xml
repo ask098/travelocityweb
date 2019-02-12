@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [My test suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="https://www.travelocity.com/"/>
+  <test name="My first test(failed)">
+    <classes>
+      <class name="com.jcastro.travelocity.test.MainTest">
+        <methods>
+          <include name="loadPage"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="Search"/>
+        </methods>
+      </class> <!-- com.jcastro.travelocity.test.MainTest -->
+    </classes>
+  </test> <!-- My first test(failed) -->
+</suite> <!-- Failed suite [My test suite] -->

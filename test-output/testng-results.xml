@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-02-12T21:38:44Z" name="My test suite" finished-at="2019-02-12T21:38:55Z" duration-ms="11256">
+    <groups>
+    </groups>
+    <test started-at="2019-02-12T21:38:44Z" name="My first test" finished-at="2019-02-12T21:38:55Z" duration-ms="11256">
+      <class name="com.jcastro.travelocity.test.MainTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String, java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-12T16:38:31Z" name="beforeSuite" finished-at="2019-02-12T16:38:44Z" duration-ms="12514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.travelocity.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="loadPage(java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-12T16:38:44Z" name="loadPage" finished-at="2019-02-12T16:38:48Z" duration-ms="4368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.travelocity.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadPage -->
+        <test-method signature="Search()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-12T16:38:48Z" name="Search" finished-at="2019-02-12T16:38:55Z" duration-ms="6875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Search -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-12T16:38:55Z" name="afterSuite" finished-at="2019-02-12T16:38:55Z" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.jcastro.travelocity.test.MainTest -->
+    </test> <!-- My first test -->
+  </suite> <!-- My test suite -->
+</testng-results>
