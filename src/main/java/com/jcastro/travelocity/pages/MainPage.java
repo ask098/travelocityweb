@@ -1,6 +1,7 @@
 package com.jcastro.travelocity.pages;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class MainPage extends BasePage {
@@ -89,8 +91,13 @@ public class MainPage extends BasePage {
 		int day = LocalDate.now().plusDays(2).getDayOfMonth();
 		departingCalendar.click();
 		getWait().until(ExpectedConditions.elementToBeClickable(nextMonthCalendarButtton));
-		nextMonthCalendarButtton.click();
+		checkMonth();
+		clickOnCalendar(day);
 
+	}
+	
+	public void clickOnCalendar(int day) {
+		
 		daysOfMonth = calendar.findElements(By.cssSelector(".datepicker-cal-weeks .datepicker-cal-dates > tr > td > button[data-day]"));
 		for(WebElement cell:daysOfMonth) {
 			String calendarDay = cell.getText().substring((cell.getText().length() - 2)).trim();
@@ -101,17 +108,29 @@ public class MainPage extends BasePage {
 		}
 	}
 	
-	
 	public void clickReturn() {
 		returningCalendar.click();
 		clearField();
 		int day = LocalDate.now().plusDays(4).getDayOfMonth();
+		clickOnCalendar(day);
+	}
+	
+	public void checkMonth() {
+		Month actualMonth = LocalDate.now().plusMonths(3).getMonth();
+		String month = String.valueOf(actualMonth).substring(0,1).toUpperCase()+String.valueOf(actualMonth).substring(1).toLowerCase();
+		System.out.println(month);
+		System.out.println(month.length());
+		selectMonth(month);
+	}
+	
+	public void selectMonth(String month) {
 		daysOfMonth = calendar.findElements(By.cssSelector(".datepicker-cal-weeks .datepicker-cal-dates > tr > td > button[data-day]"));
-		for(WebElement cell:daysOfMonth) {
-			String calendarDay = cell.getText().substring((cell.getText().length() - 2)).trim();
-			if(calendarDay.equals(Integer.toString(day))) {
-				cell.click();
+		for(WebElement monthTocheck:daysOfMonth) {
+			if((monthTocheck.getText().startsWith(month))){
 				break;
+			}else{
+				getWait().until(ExpectedConditions.elementToBeClickable(nextMonthCalendarButtton));
+				driver.findElement(By.cssSelector("button.datepicker-next")).click();		
 			}
 		}
 	}

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-My_test_suite" class="navigator-link">
-              <span class="suite-name border-passed">My test suite</span>
+              <span class="suite-name border-failed">My test suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-My_test_suite" class="hide-methods passed suite-My_test_suite"> (hide)</a> <!-- hide-methods passed suite-My_test_suite -->
-                      <a href="#" panel-name="suite-My_test_suite" class="show-methods passed suite-My_test_suite"> (show)</a> <!-- show-methods passed suite-My_test_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-My_test_suite" class="hide-methods failed suite-My_test_suite"> (hide)</a> <!-- hide-methods failed suite-My_test_suite -->
+                      <a href="#" panel-name="suite-My_test_suite" class="show-methods failed suite-My_test_suite"> (show)</a> <!-- show-methods failed suite-My_test_suite -->
                     </span>
-                    <div class="method-list-content passed suite-My_test_suite">
+                    <div class="method-list-content failed suite-My_test_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-My_test_suite" title="com.jcastro.travelocity.test.MainTest" class="method navigator-link" hash-for-method="Search">Search</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-My_test_suite -->
+                    </div> <!-- method-list-content failed suite-My_test_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-My_test_suite" class="panel My_test_suite">
-          <div class="suite-My_test_suite-class-passed">
+          <div class="suite-My_test_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.jcastro.travelocity.test.MainTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,10 +128,38 @@
                   <a name="Search">
                   </a> <!-- Search -->
                   <span class="method-name">Search</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Mac OS X 10.13.6 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;co-it01248.globant.com&apos;, ip: &apos;10.130.5.184&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.6&apos;, java.version: &apos;9.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /var/folders/52/kjhztgj512x...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51894}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: cc55a2888b5a60467bc9830d21e3ebb0
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
+	at com.jcastro.travelocity.pages.MainPage.selectMonth(MainPage.java:132)
+	at com.jcastro.travelocity.pages.MainPage.checkMonth(MainPage.java:123)
+	at com.jcastro.travelocity.pages.MainPage.clickDeparture(MainPage.java:94)
+	at com.jcastro.travelocity.pages.MainPage.completeCalendar(MainPage.java:71)
+	at com.jcastro.travelocity.pages.MainPage.searchFlight(MainPage.java:54)
+	at com.jcastro.travelocity.test.MainTest.Search(MainTest.java:23)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-My_test_suite-class-passed -->
+          </div> <!-- suite-My_test_suite-class-failed -->
         </div> <!-- panel My_test_suite -->
         <div panel-name="test-xml-My_test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -190,12 +218,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Search')
 data.setCell(0, 2, 'com.jcastro.travelocity.test.MainTest')
-data.setCell(0, 3, 15398);
+data.setCell(0, 3, 3045);
 window.suiteTableData['My_test_suite']= { tableData: data, tableDiv: 'times-div-My_test_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-My_test_suite">
               </div> <!-- times-div-My_test_suite -->
             </div> <!-- times-div -->
@@ -228,15 +256,17 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">loadPage(https://www.travelocity.com/)</span>
-                <span class="method-start">8064 ms</span>
+                <span class="method-start">11014 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">Search</span>
-                <span class="method-start">11604 ms</span>
+                <span class="method-start">15675 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">27070 ms</span>
+                <span class="method-start">18797 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
