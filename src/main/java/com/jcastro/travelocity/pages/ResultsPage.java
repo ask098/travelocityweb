@@ -107,15 +107,18 @@ public class ResultsPage extends BasePage {
 		}
 	}
 	
-	
-	public void checkDuraton() {
-		
-	}
-	
 	public void checkResultPage() {
 		
 		checkSelectButton();
 		checkShortFilter();
+		checkDuraton();
+	}
+	
+	public void checkDuraton() {
+		int indexResult =0;
+		for (WebElement listResults : resultList) {
+			indexResult++;
+			Assert.assertNotNull(listResults.findElement(By.cssSelector(".duration-emphasis")),"Result #"+indexResult+" hasn't duration.");
+		}
 	}
 }
-

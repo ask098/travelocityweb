@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-02-13T14:54:26Z" name="My test suite" finished-at="2019-02-13T14:54:46Z" duration-ms="19916">
+  <suite started-at="2019-02-13T15:11:26Z" name="My test suite" finished-at="2019-02-13T15:11:43Z" duration-ms="16754">
     <groups>
     </groups>
-    <test started-at="2019-02-13T14:54:26Z" name="My first test" finished-at="2019-02-13T14:54:46Z" duration-ms="19916">
+    <test started-at="2019-02-13T15:11:26Z" name="My first test" finished-at="2019-02-13T15:11:43Z" duration-ms="16754">
       <class name="com.jcastro.travelocity.test.MainTest">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String, java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T09:54:18Z" name="beforeSuite" finished-at="2019-02-13T09:54:26Z" duration-ms="8896" status="PASS">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String, java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T10:11:18Z" name="beforeSuite" finished-at="2019-02-13T10:11:26Z" duration-ms="8236" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="loadPage(java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T09:54:26Z" name="loadPage" finished-at="2019-02-13T09:54:29Z" duration-ms="2486" status="PASS">
+        <test-method is-config="true" signature="loadPage(java.lang.String)[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T10:11:26Z" name="loadPage" finished-at="2019-02-13T10:11:27Z" duration-ms="960" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,32 +34,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadPage -->
-        <test-method signature="Search()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T09:54:29Z" name="Search" finished-at="2019-02-13T09:54:46Z" duration-ms="17411" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method signature="Search()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T10:11:27Z" name="Search" finished-at="2019-02-13T10:11:43Z" duration-ms="15772" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such window: window was already closed
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":".duration-empha7sis"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Mac OS X 10.13.6 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CO-IT01248.local', ip: '10.130.4.250', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '9.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /var/folders/52/kjhztgj512x...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57585}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e0441b5f9b480d3d44ad7ce403f99617
-*** Element info: {Using=css selector, value=#flightModuleList .grid-container button .btn-label span:first-child}]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /var/folders/52/kjhztgj512x...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62789}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: c73409d86f0ff6597f33a52ce6f89db9
+*** Element info: {Using=css selector, value=.duration-empha7sis}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: window was already closed
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".duration-empha7sis"}
   (Session info: chrome=71.0.3578.98)
   (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Mac OS X 10.13.6 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CO-IT01248.local', ip: '10.130.4.250', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.6', java.version: '9.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /var/folders/52/kjhztgj512x...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57585}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e0441b5f9b480d3d44ad7ce403f99617
-*** Element info: {Using=css selector, value=#flightModuleList .grid-container button .btn-label span:first-child}
-	at jdk.internal.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /var/folders/52/kjhztgj512x...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62789}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: c73409d86f0ff6597f33a52ce6f89db9
+*** Element info: {Using=css selector, value=.duration-empha7sis}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
@@ -70,21 +73,13 @@ Session ID: e0441b5f9b480d3d44ad7ce403f99617
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:185)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementByCssSelector(RemoteWebElement.java:253)
 	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy13.toString(Unknown Source)
-	at java.base/java.lang.String.valueOf(String.java:2801)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:135)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.toString(ExpectedConditions.java:683)
-	at java.base/java.lang.String.valueOf(String.java:2801)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:135)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:268)
-	at com.jcastro.travelocity.pages.ResultsPage.checkSelectButton(ResultsPage.java:101)
-	at com.jcastro.travelocity.pages.ResultsPage.checkResultPage(ResultsPage.java:117)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:181)
+	at com.jcastro.travelocity.pages.ResultsPage.checkDuraton(ResultsPage.java:121)
+	at com.jcastro.travelocity.pages.ResultsPage.checkResultPage(ResultsPage.java:114)
 	at com.jcastro.travelocity.test.MainTest.Search(MainTest.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -113,11 +108,11 @@ Session ID: e0441b5f9b480d3d44ad7ce403f99617
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Search -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T09:54:47Z" name="afterSuite" finished-at="2019-02-13T09:54:47Z" duration-ms="107" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.jcastro.travelocity.test.MainTest@77f80c04]" started-at="2019-02-13T10:11:43Z" name="afterSuite" finished-at="2019-02-13T10:11:43Z" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
