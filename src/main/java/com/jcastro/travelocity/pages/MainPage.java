@@ -10,7 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
+/**
+ * 
+ * @author jc.castro
+ *
+ */
 
 public class MainPage extends BasePage {
 
@@ -25,6 +29,7 @@ public class MainPage extends BasePage {
 		driver.get(url);
 	}
 	
+	//Web elements
 	@FindBy(id="tab-flight-tab-hp")
 	private WebElement flightsButton;
 	@FindBy(id="flight-type-roundtrip-label-hp-flight")
@@ -45,7 +50,9 @@ public class MainPage extends BasePage {
 	private WebElement searchButton;
 	List<WebElement> daysOfMonth;
 
-	
+	/**
+	 * complete a search as round trip flight
+	 */
 	public void searchFlight() {
 		
 		selectFlightOption();
@@ -54,12 +61,18 @@ public class MainPage extends BasePage {
 		completeDropDown();	
 	}
 	
+	/**
+	 * Selects roundtrip flight option
+	 */
 	public void selectFlightOption() {
 		
 		flightsButton.click();
 		roundtripOption.click();
 	}
 	
+	/**
+	 * complete fields for destination and departure
+	 */
 	public void completeDestinationAndOrigin() {
 		flightOrigin.click(); flightOrigin.sendKeys("LAS");
 		flightDestination.click(); flightDestination.sendKeys("LAX");
@@ -71,6 +84,11 @@ public class MainPage extends BasePage {
 		clickReturn();
 	}
 	
+	/**
+	 * 
+	 * clear field to return calendar
+	 * 
+	 */
 	public void clearField(){
 		
 		String os = System.getProperty("os.name");
@@ -85,6 +103,11 @@ public class MainPage extends BasePage {
 		}
 	}
 
+	/**
+	 * 
+	 * complete departure on calendar
+	 * 
+	 */
 	public void clickDeparture() {
 		
 		int day = LocalDate.now().plusDays(2).getDayOfMonth();
@@ -95,6 +118,12 @@ public class MainPage extends BasePage {
 
 	}
 	
+	/**
+	 * 
+	 * select day on datapicker calendar for return and departure
+	 * 
+	 * @param day number of days after current day to select travel
+	 */
 	public void clickOnCalendar(int day) {
 		
 		daysOfMonth = calendar.findElements(By.cssSelector(".datepicker-cal-weeks .datepicker-cal-dates > tr > td > button[data-day]"));
@@ -120,21 +149,24 @@ public class MainPage extends BasePage {
 		}
 	}
 	
+	/**
+	 * complete drop down	
+	 */
 	public void completeDropDown() {
 		
 		Select dropDownAdults = new Select(getDriver().findElement(By.id("flight-adults-hp-flight")));
 		dropDownAdults.selectByValue("1");
 	}
-	
-	public ResultsPage clickOnSearchButton() {
-		getWait().until(ExpectedConditions.elementToBeClickable(searchButton));
-		searchButton.click();
-		return new ResultsPage(getDriver());
-	}
-	
+		
+	/**
+	 * 
+	 * @return to result page after click on 
+	 * 			search flight button
+	 */
 	public ResultsPage clickSearchFligthButton(){
 		
-		clickOnSearchButton();
+		getWait().until(ExpectedConditions.elementToBeClickable(searchButton));
+		searchButton.click();
 		return new ResultsPage(driver); 
 	}
 	

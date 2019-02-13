@@ -7,8 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
+/**
+ * 
+ * @author jc.castro
+ *
+ */
 public class ResultsPage extends BasePage {
 
 	public ResultsPage(WebDriver pDriver) {
@@ -16,31 +21,27 @@ public class ResultsPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 	
+	//Web elements
 	@FindBy(id="#sortDropdown")
 	private WebElement sortBy;
-	
 	@FindBy (css="#flightModuleList button .btn-label span:first-child")
 	private WebElement buttons;
-	
-	@FindBy (css=".grid-container.standard-padding")
+	@FindBy (css="#flightModuleList .grid-container")
 	private WebElement container;
-	
 	@FindBy (css="#flightModuleList .grid-container")
 	private List<WebElement> resultList;
-	
 	@FindBy(css="#flightModuleList .grid-container button .btn-label span:first-child")
 	private WebElement selectButton;
-	
 	@FindBy (css=".duration-emphasis")
 	private WebElement duration;
-	
-	 @FindBy (css="ssss")
-	 private WebElement baggageFee;
+	@FindBy (css="ssss")
+	private WebElement baggageFee;
+	@FindBy(id="sort-filter-drawer")
+	private WebElement filterSection;
+		
 	
 	/**
-	 *  check order by price 
-	 *  select button pressent on every result
-	 *  fligth detail and baggage fee pressent
+	 *  check options on sort filter 
 	 */
 	
 	public void checkShortFilter() {
@@ -99,6 +100,10 @@ public class ResultsPage extends BasePage {
 		}
 	}
 	
+	/**
+	 * check option is present on result list
+	 * @param option to check on result list
+	 */
 	public void checkElements(String option) {
 		int indexResult =0;
 		for (WebElement listResults : resultList) {
@@ -112,7 +117,7 @@ public class ResultsPage extends BasePage {
 						"Result #"+indexResult+" hasn't Select Button.");
 				break;
 			case "Duration":
-				getWait().until(ExpectedConditions.elementToBeClickable(duration));
+//				getWait().until(ExpectedConditions.elementToBeClickable(duration));
 				indexResult++;
 				Assert.assertNotNull(listResults.findElement(By.cssSelector(".duration-emphasis")),
 						"Result #"+indexResult+" hasn't duration.");
@@ -128,11 +133,48 @@ public class ResultsPage extends BasePage {
 		}
 	}
 	
+	/**
+	 * check options on the result page
+	 */
 	public void checkResultPage() {
 		
 		checkShortFilter();
 		checkElements("Select");
 		checkElements("Duration");
 		checkElements("Baggage");
+		sortByDuration();
+		checkOrder();
+		
 	}
+	
+	/**
+	 * selects Duration Shortest for list results
+	 */
+	public void sortByDuration() {
+		
+		Select dropDown = new Select(filterSection.findElement(By.id("sortDropdown")));
+		dropDown.selectByValue("duration:asc");
+		getWait().until(ExpectedConditions.elementToBeClickable(selectButton));
+		checkOrder();
+	}
+
+	/**
+	 * check results after be order by duration
+	 */
+	private void checkOrder() {
+
+		for (WebElement listResults : resultList) {
+			List<WebElement> datos = listResults.findElements(By.cssSelector(".duration-emphasis"));
+			
+			for (WebElement d : datos) {
+				String s =d.getText();
+				s= s.replaceAll("[^\\d.]", "");
+				if(s.length()<3) {
+					s=s+"0";
+				}
+			}
+		}
+	}
+	
+
 }
