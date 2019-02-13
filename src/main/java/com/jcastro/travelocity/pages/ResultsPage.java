@@ -31,6 +31,9 @@ public class ResultsPage extends BasePage {
 	@FindBy(css="#flightModuleList .grid-container button .btn-label span:first-child")
 	private WebElement selectButton;
 	
+	@FindBy (css=".duration-emphasis")
+	private WebElement duration;
+	
 	/**
 	 *  check order by price 
 	 *  select button pressent on every result
@@ -102,6 +105,11 @@ public class ResultsPage extends BasePage {
 					"Select",
 					"Result #"+indexResult+" hasn't Select Button.");
 		}
+	}
+	
+	
+	public void checkDuraton() {
+		
 	}
 	
 	public void checkResultPage() {
