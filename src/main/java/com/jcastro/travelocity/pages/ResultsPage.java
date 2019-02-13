@@ -34,6 +34,9 @@ public class ResultsPage extends BasePage {
 	@FindBy (css=".duration-emphasis")
 	private WebElement duration;
 	
+	 @FindBy (css="ssss")
+	 private WebElement baggageFee;
+	
 	/**
 	 *  check order by price 
 	 *  select button pressent on every result
@@ -96,29 +99,40 @@ public class ResultsPage extends BasePage {
 		}
 	}
 	
-	public void checkSelectButton() {
+	public void checkElements(String option) {
 		int indexResult =0;
-		getWait().until(ExpectedConditions.elementToBeClickable(selectButton));
 		for (WebElement listResults : resultList) {
-			indexResult++;
-			Assert.assertEquals((listResults.findElement(By.cssSelector("#flightModuleList .grid-container button .btn-label span:first-child")).getText()),
-					"Select",
-					"Result #"+indexResult+" hasn't Select Button.");
+			
+			switch (option) {
+			case "Select":
+				getWait().until(ExpectedConditions.elementToBeClickable(selectButton));
+				indexResult++;
+				Assert.assertEquals((listResults.findElement(By.cssSelector("#flightModuleList .grid-container button .btn-label span:first-child")).getText()),
+						"Select",
+						"Result #"+indexResult+" hasn't Select Button.");
+				break;
+			case "Duration":
+				getWait().until(ExpectedConditions.elementToBeClickable(duration));
+				indexResult++;
+				Assert.assertNotNull(listResults.findElement(By.cssSelector(".duration-emphasis")),
+						"Result #"+indexResult+" hasn't duration.");
+				break;
+			case "Baggage":
+				indexResult++;
+				Assert.assertNotNull(listResults.findElement(By.cssSelector(".show-flight-details")),
+						"Result #"+indexResult+" hasn't baggage fees option.");
+				break;
+			default:
+				break;
+			}	
 		}
 	}
 	
 	public void checkResultPage() {
 		
-		checkSelectButton();
 		checkShortFilter();
-		checkDuraton();
-	}
-	
-	public void checkDuraton() {
-		int indexResult =0;
-		for (WebElement listResults : resultList) {
-			indexResult++;
-			Assert.assertNotNull(listResults.findElement(By.cssSelector(".duration-emphasis")),"Result #"+indexResult+" hasn't duration.");
-		}
+		checkElements("Select");
+		checkElements("Duration");
+		checkElements("Baggage");
 	}
 }
