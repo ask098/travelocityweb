@@ -1,9 +1,5 @@
 package com.jcastro.travelocity.test;
 
-import static com.jcastro.travelocity.pages.BasePage.driver;
-
-import java.util.Set;
-
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;

@@ -2,13 +2,11 @@ package com.jcastro.travelocity.pages;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -53,9 +51,7 @@ public class MainPage extends BasePage {
 		completeDestinationAndOrigin();
 		completeCalendar();
 		completeDropDown();	
-		clickOnSearchButton();
 	}
-	
 	
 	public void selectFlightOption() {
 		
@@ -119,8 +115,6 @@ public class MainPage extends BasePage {
 			}
 		}
 	}
-
-	
 	
 	public void completeDropDown() {
 		
@@ -133,4 +127,11 @@ public class MainPage extends BasePage {
 		searchButton.click();
 		return new ResultsPage(getDriver());
 	}
+	
+	public ResultsPage clickSearchFligthButton(){
+		
+		clickOnSearchButton();
+		return new ResultsPage(driver); 
+	}
+	
 }

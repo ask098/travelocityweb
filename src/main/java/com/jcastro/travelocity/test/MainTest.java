@@ -5,10 +5,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.jcastro.travelocity.pages.MainPage;
+import com.jcastro.travelocity.pages.ResultsPage;
 
 public class MainTest extends BaseTest {
 
-	private MainPage home;
+	
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({"url"})
@@ -18,8 +19,10 @@ public class MainTest extends BaseTest {
 	
 	@Test
 	public void Search() {
-		home = getHomePage();
-		home.searchFlight();
+		MainPage mainpage = getHomePage();
+		 mainpage.searchFlight();
+		 ResultsPage resultPage = mainpage.clickSearchFligthButton();
+		 resultPage.checkResultPage();
 	}
 	
 	
